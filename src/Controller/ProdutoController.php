@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Produto;
+use App\Form\ProdutoType;
 use App\Repository\CategoriaRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
@@ -28,5 +29,13 @@ class ProdutoController extends AbstractController
             $mensagem = "Erro ao cadastrar produto!";
         }
         return new Response("<p>".$mensagem."</p>");
+    }
+    public function create() : Response
+    {
+        $form = $this->createForm(ProdutoType::class);
+        $data['titulo'] = 'Adicionar novo produto';
+        $data['form'] = $form->createView();
+
+        return $this->render('produto/form.html.twig', $data);
     }
 }

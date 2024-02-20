@@ -3,9 +3,23 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+# Categorias
 categoria:
     path: /categoria
     controller: App\Controller\CategoriaController::index
+categoria_create:
+    path: /categoria/create
+    controller: App\Controller\CategoriaController::create
+categoria_edit:
+    path: /categoria/edit/{id}
+    controller: App\Controller\CategoriaController::edit
+categoria_delete:
+    path: /categoria/delete/{id}
+    controller: App\Controller\CategoriaController::delete
+# Produtos
 produto:
     path: /produto
     controller: App\Controller\ProdutoController::index
+produto_create:
+    path: /produto/create
+    controller: App\Controller\ProdutoController::create

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block body %}
+    <h1>{{ titulo }}</h1>
+    <div class="alert alert-success" role="alert">
+        <p>{{ msg }}</p>
+    </div>
+    {{ form(form) }}
+{% endblock %}
